@@ -1,10 +1,7 @@
 # Clone from the Fedora 20 image
 FROM fedora:20
 
-MAINTAINER Taylor Monacelli
-
-RUN yum install -y emacs git
-RUN cd && git init && git remote add origin https://github.com/taylormonacelli/dotfiles.git && git fetch && git checkout -f -t origin/master
+MAINTAINER Jan Pazdziora
 
 # Install FreeIPA server
 RUN mkdir -p /run/lock ; yum install -y freeipa-server bind bind-dyndb-ldap perl && yum clean all
